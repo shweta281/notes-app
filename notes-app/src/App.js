@@ -46,18 +46,16 @@ export default function App() {
     
     function deleteNote(event, noteId) {
         event.stopPropagation()
-        // Your code here
-        const newarr=[];
-        for (let i=0; i<notes.length; i++){
-            if(notes[i].id!==noteId){
-                // console.log(notes[i].id, noteId);
+        setNotes( prevState=> prevState.filter(( value)=> value.id!==noteId))
+        // const newarr=[];
+        // for (let i=0; i<notes.length; i++){
+        //     if(notes[i].id!==noteId){
                 
-                newarr.push(notes[i])
-            }
-        }
-        // console.log(newarr, 'jjjjjjjjj');
+        //         newarr.push(notes[i])
+        //     }
+        // }
         
-        setNotes([...newarr]);
+        // setNotes([...newarr]);
         
     }
     
